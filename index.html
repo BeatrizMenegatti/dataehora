@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document- for Hours/Day</title>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+</head>
+<body>
+    <p>Hello Word!</p>
+    <p id="time"></p>
+</body>
+
+<script>
+var timeDisplay = document.getElementById("time");
+
+
+    function refreshTime() {
+      var dateString = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
+      var formattedString = dateString.replace(", ", " - ");
+      timeDisplay.innerHTML = formattedString;
+    }
+    
+    setInterval(refreshTime, 1000); 
+    </script>
+</html>
